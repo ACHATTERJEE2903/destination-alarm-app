@@ -21,3 +21,6 @@ Then open `http://localhost:4173`.
 ```bash
 npm test
 ```
+
+## Getting changes into GitHub from Codex
+If you're using Codex and want the files to show up on GitHub, open the **PR** button in the top-right of the Codex window and create/merge the pull request. The files become visible in the repository on GitHub after that PR flow is completed.
