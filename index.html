@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destination Alarm Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Destination Alarm Prototype</h1>
+      <p class="subtitle">Set a target location and get alerted when you are nearby.</p>
+
+      <section class="card">
+        <h2>Destination</h2>
+        <div class="grid">
+          <label>
+            Latitude
+            <input id="dest-lat" type="number" step="any" placeholder="e.g. 37.7749" />
+          </label>
+          <label>
+            Longitude
+            <input id="dest-lng" type="number" step="any" placeholder="e.g. -122.4194" />
+          </label>
+          <label>
+            Alarm radius (meters)
+            <input id="radius" type="number" min="10" step="10" value="400" />
+          </label>
+        </div>
+        <div class="actions">
+          <button id="set-from-current" class="secondary">Use current location as destination</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Tracking</h2>
+        <div class="actions">
+          <button id="start">Start tracking</button>
+          <button id="stop" class="secondary" disabled>Stop tracking</button>
+          <button id="test-alarm" class="secondary">Test alarm</button>
+        </div>
+        <ul class="status-list">
+          <li><strong>Status:</strong> <span id="status">Idle</span></li>
+          <li><strong>Current location:</strong> <span id="current">Unknown</span></li>
+          <li><strong>Distance to destination:</strong> <span id="distance">--</span></li>
+          <li><strong>Destination reached:</strong> <span id="reached">No</span></li>
+        </ul>
+      </section>
+
+      <section class="card note">
+        <h2>How this prototype works</h2>
+        <ol>
+          <li>Enter destination latitude/longitude and radius.</li>
+          <li>Start tracking (requires location permission in your browser/device).</li>
+          <li>The alarm fires once when you enter the radius.</li>
+        </ol>
+      </section>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
